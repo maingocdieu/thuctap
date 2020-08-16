@@ -48,6 +48,7 @@
 		src="<c:url value='/template/web/js/jquery.easing-1.3.min.js' />"></script>
 	<script type="text/javascript"
 		src="<c:url value='/template/web/js/jquery.scrollTo-1.4.3.1-min.js' />"></script>
+	<script src="<c:url value='/template/js/global_javascript2.js' />"></script>
 
 </body>
 </html>

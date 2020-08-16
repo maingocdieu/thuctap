@@ -15,6 +15,7 @@ public class NewAPI {
 
     @PostMapping
     public ResponseEntity<NewDTO> createNew(@RequestBody NewDTO newDTO) {
+        System.out.println("Dieu dep trai :"+newDTO.getBase64());
         return ResponseEntity.ok(newService.insert(newDTO));
     }
 

@@ -9,6 +9,24 @@
 		<class>com.example.entity.RoleEntity</class>
 		<class>com.example.entity.BaseEntity</class>
 		<class>com.example.entity.CategoryEntity</class>
+		<class>com.example.entity.PhieuNhapEntity</class>
+		<class>com.example.entity.SanPhamEntity</class>
+
+		<class>com.example.entity.LoaiSanPhamEntity</class>
+		<class>com.example.entity.CTPNEntity</class>
+		<class>com.example.entity.DonDatHangEntity</class>
+		<class>com.example.entity.CTDDHEntity</class>
+
+		<class>com.example.entity.KhuyeMaiEntity</class>
+		<class>com.example.entity.CTKMEntity</class>
+		<class>com.example.entity.HoaDonEntity</class>
+
+
+
+
+
+
+
 	</persistence-unit>
 </persistence>
 

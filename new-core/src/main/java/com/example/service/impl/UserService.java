@@ -47,6 +47,9 @@ public class UserService implements IUserService {
     @Override
     @Transactional
     public Integer insert(UserDTO userDTO) {
+
+
+
         List<RoleEntity> roleEntities = new ArrayList<>();
         UserEntity userEntity = userConverter.convertToEntity(userDTO);
         userEntity.setPassword(passwordEncoder.encode(userDTO.getPassword()));

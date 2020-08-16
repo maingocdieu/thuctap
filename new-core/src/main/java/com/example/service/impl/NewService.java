@@ -8,13 +8,13 @@ import com.example.entity.CategoryEntity;
 import com.example.entity.NewEntity;
 import com.example.repository.CategoryRepository;
 import com.example.repository.NewRepository;
+import com.example.repository.Paging.Pageable;
 import com.example.security.util.SecurityUtils;
 import com.example.service.INewService;
 import com.example.util.UploadFileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,6 +45,7 @@ public class NewService implements INewService {
         NewEntity newEntity = newConverter.convertToEntity(newDTO);
         newEntity.setCategory(categoryRepository.findOneByCode(newDTO.getCategoryCode()));
         if (newDTO.getBase64() != null) {
+            System.out.println("Base 64 la"+newDTO.getBase64());
             byte[] decodeBase64 = Base64.getDecoder().decode(newDTO.getBase64().getBytes());
             uploadFileUtils.writeOrUpdate(decodeBase64, "/thumbnail/"+newDTO.getFileName());
             newEntity.setThumbnail("/usr/var/thumbnail/"+newDTO.getFileName());
@@ -74,6 +75,19 @@ public class NewService implements INewService {
     public List<NewDTO> findAll(NewDTO model) {
         Page<NewEntity> pages = newRepository.findAll(new PageRequest(model.getPage() - 1, model.getMaxPageItems()));
         return pages.getContent().stream().map(item -> newConverter.convertToDto(item)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void findAll(NewDTO model,Pageable pageable) {
+        List<NewEntity> newEntities = newRepository.findAll(pageable);
+        List<NewDTO> newDTOS=new ArrayList<>();
+        for (NewEntity item:newEntities
+             ) {
+            NewDTO  newDTO=newConverter.convertToDto(item);
+            newDTOS.add(newDTO);
+        }
+      model.setListResult(newDTOS);
+       model.setTotalItems(newRepository.getTotalItems().intValue());
     }
 
     @Override

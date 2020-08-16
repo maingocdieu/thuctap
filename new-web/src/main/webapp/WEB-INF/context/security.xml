@@ -14,7 +14,7 @@
 		<intercept-url pattern="/admin/home"
 			access="hasRole('ADMIN')" />
 		<intercept-url pattern="/trang-chu"
-			access="hasRole('USER')" />
+			access="permitAll()" />
 
 
 		<access-denied-handler
@@ -25,7 +25,7 @@
 			authentication-success-handler-ref="customSuccessHandler"
 			authentication-failure-url="/dang-nhap?incorrectAccount" />
 		<session-management
-			invalid-session-url="/dang-nhap" />
+			invalid-session-url="/trang-chu" />
 		<logout delete-cookies="JSESSIONID" />
 	</http>
 

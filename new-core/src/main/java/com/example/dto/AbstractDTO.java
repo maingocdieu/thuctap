@@ -15,8 +15,9 @@ public class AbstractDTO<T> implements Serializable {
     private Date modifiedDate;
     private String modifiedBy;
     private int page = 1;
-    private int maxPageItems = 6;
+    private int maxPageItems = 5;
     private int totalItems = 0;
+    private int totalPages=0;
     private List<T> listResult = new ArrayList<>();
     private String tableId = "tableList";
 
@@ -76,20 +77,28 @@ public class AbstractDTO<T> implements Serializable {
         this.maxPageItems = maxPageItems;
     }
 
-    public List<T> getListResult() {
-        return listResult;
-    }
-
-    public void setListResult(List<T> listResult) {
-        this.listResult = listResult;
-    }
-
     public int getTotalItems() {
         return totalItems;
     }
 
     public void setTotalItems(int totalItems) {
         this.totalItems = totalItems;
+    }
+
+    public int getTotalPages() {
+       return (int)Math.ceil((double)this.getTotalItems()/this.maxPageItems);
+    }
+
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
+    }
+
+    public List<T> getListResult() {
+        return listResult;
+    }
+
+    public void setListResult(List<T> listResult) {
+        this.listResult = listResult;
     }
 
     public String getTableId() {

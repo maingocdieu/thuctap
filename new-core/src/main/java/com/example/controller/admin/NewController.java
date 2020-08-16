@@ -2,6 +2,7 @@ package com.example.controller.admin;
 
 import com.example.constant.SystemConstant;
 import com.example.dto.NewDTO;
+import com.example.repository.Paging.PageRequest;
 import com.example.service.ICategoryService;
 import com.example.service.INewService;
 import com.example.util.DisplayTagUtils;
@@ -63,4 +64,6 @@ public class NewController {
         mav.addObject(SystemConstant.MODEL, model);
         return mav;
     }
+
+
 }

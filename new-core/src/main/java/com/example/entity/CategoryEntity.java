@@ -16,8 +16,19 @@ public class CategoryEntity extends BaseEntity {
     @Column
     private String code;
 
+//    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+//    private List<NewEntity> news = new ArrayList<>();
+
     @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
-    private List<NewEntity> news = new ArrayList<>();
+    private List<SanPhamEntity> sanPhams = new ArrayList<>();
+
+    public List<SanPhamEntity> getSanPhams() {
+        return sanPhams;
+    }
+
+    public void setSanPhams(List<SanPhamEntity> sanPhams) {
+        this.sanPhams = sanPhams;
+    }
 
     public String getName() {
         return name;
@@ -35,11 +46,4 @@ public class CategoryEntity extends BaseEntity {
         this.code = code;
     }
 
-    public List<NewEntity> getNews() {
-        return news;
-    }
-
-    public void setNews(List<NewEntity> news) {
-        this.news = news;
-    }
 }

@@ -9,6 +9,7 @@
 <title><dec:title default="Admin Page" /></title>
 
 <!-- jquery -->
+
 <script type='text/javascript'
 	src='<c:url value="/template/admin/js/2.1.4/jquery.min.js" />'></script>
 
@@ -25,10 +26,14 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <%--sweetalert--%>
+
 <script type='text/javascript'
 	src='<c:url value="/template/admin/assets/sweetalert2/sweetalert2.min.js"/>'></script>
 <link rel="stylesheet"
-	href="<c:url value="/template/admin/assets/sweetalert2/sweetalert2.min.css"/>">
+	href="<c:url value='/template/admin/assets/sweetalert2/sweetalert2.min.css'/>">
+
+    <script type="text/javascript"
+            src='<c:url value="/template/admin/js/paginga/jquery.twbsPagination.min.js"/>'></script>
 
 </head>
 <body class="no-skin">

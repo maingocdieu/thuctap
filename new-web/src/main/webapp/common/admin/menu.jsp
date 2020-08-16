@@ -42,15 +42,34 @@
 						class="menu-icon fa fa-caret-right"></i> Danh sách bài đăng
 				</a> <b class="arrow"></b></li>
 			</ul></li>
+
+
+
 		<li class=""><a href="#" class="dropdown-toggle"> <i
 				class="menu-icon fa fa-list"></i> <span class="menu-text">Quản
-					lý bài đăng</span> <b class="arrow fa fa-angle-down"></b>
+					lý  Sản phẩm</span> <b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+			<ul class="submenu">
+				<li class=""><a href='<c:url value="/admin/sanpham/list"/>'> <i
+						class="menu-icon fa fa-caret-right"></i> Danh sach sản phẩm
+				</a> <b class="arrow"></b></li>
+
+
+			</ul></li>
+
+
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text">Quản
+					lý User</span> <b class="arrow fa fa-angle-down"></b>
 		</a> <b class="arrow"></b>
 			<ul class="submenu">
 				<li class=""><a href='<c:url value="/admin/new/list"/>'> <i
-						class="menu-icon fa fa-caret-right"></i> Danh sách bài đăng
+						class="menu-icon fa fa-caret-right"></i> Them User
 				</a> <b class="arrow"></b></li>
 			</ul></li>
+
+
 	</ul>
 	<div class="sidebar-toggle sidebar-collapse">
 		<i class="ace-icon fa fa-angle-double-left ace-save-state"

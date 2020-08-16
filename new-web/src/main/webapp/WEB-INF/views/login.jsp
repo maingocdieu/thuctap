@@ -39,9 +39,9 @@
 							</label>
 
 							<div class="space"></div>
-							<div class="clearfix">
+							<div class="">
 								<button type="submit"
-									class="width-35 pull-right btn btn-sm btn-primary">
+									class="btn btn-primary">
 									<span class="bigger-110">Đăng nhập</span>
 								</button>
 							</div>
